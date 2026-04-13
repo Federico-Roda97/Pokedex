@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+  </head>
+
+  <body>
+    <h1 class="title">
+      Pokédex Dashboard
+
+      <span class="pokeball">
+        <svg
+          width="80"
+          height="80"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Outer circle -->
+          <circle
+            cx="50"
+            cy="50"
+            r="48"
+            fill="#ffffff"
+            stroke="#222"
+            stroke-width="3"
+          />
+
+          <!-- Top red half -->
+          <path d="M 50 50 L 2 50 A 48 48 0 0 1 98 50 Z" fill="#ef4444" />
+
+          <!-- Black center band -->
+          <rect x="2" y="46" width="96" height="8" fill="#222" />
+
+          <!-- Center button -->
+          <circle
+            cx="50"
+            cy="50"
+            r="12"
+            fill="#ffffff"
+            stroke="#222"
+            stroke-width="4"
+          />
+          <circle cx="50" cy="50" r="5" fill="#e5e7eb" />
+        </svg>
+      </span>
+    </h1>
+
+    <!-- CONTROLLI -->
+    <div class="controls">
+      <button class="btn primary" id="primaPagina">Prima Pagina</button>
+      <button class="btn" id="precedente">Precedente</button>
+      <button class="btn" id="successiva">Successiva</button>
+      <button class="btn primary" id="ultimaPagina">Ultima Pagina</button>
+
+      <button id="themeToggle" class="btn primary">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Pokémon..."
+        autocomplete="off"
+      />
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading" class="hidden">Caricamento Pokémon...</div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table id="pokemonTable">
+        <thead>
+          <tr>
+            <th>Immagine</th>
+            <th>Nome</th>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Altezza</th>
+            <th>Peso</th>
+          </tr>
+        </thead>
+
+        <tbody id="pokemonTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- PAGINATION INFO -->
+    <div id="paginationInfo" class="pagination-info"></div>
+
+    <!-- PAGINATION BUTTONS -->
+    <div id="pagination" class="pagination"></div>
+
+    <!-- DETAIL PANEL -->
+    <div id="detailPanel" class="detail-panel hidden"></div>
+
+    <footer class="footer">
+      <p>Pokédex Dashboard — Built with HTML, CSS, JavaScript and PokéAPI.</p>
+      <p class="footer-sub">
+        Data provided by https://pokeapi.co/ — Pokémon and related content are
+        trademarks of Nintendo/Game Freak.
+     <p class = "footer-sub">Author: Federico Roda </p>   
+    </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
